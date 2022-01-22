@@ -1,0 +1,111 @@
+{
+  "name": "@vuite/vite-component-lib-storybook",
+  "version": "0.0.1",
+  "description": "Vite + Typescript + Storybook -- based starter template for creating Vue 3 Component Library",
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "component library",
+    "vite",
+    "storybook"
+  ],
+  "main": "./dist/vuite.umd.js",
+  "module": "./dist/vuite.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vuite.es.js",
+      "require": "./dist/vuite.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "types": "dist/src/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn storybook",
+    "build": "vite build && yarn type",
+    "type": "tsc -d",
+    "test": "jest",
+    "storybook": "start-storybook -p 3000",
+    "storybook:build": "build-storybook",
+    "cc": "yarn create-component",
+    "create-component": "node ./bin/index.js",
+    "tcc": "node ./bin/test.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint src/**/*.{vue,ts,tsx}",
+    "lint:fix": "npm run lint --fix",
+    "lint:ls": "ls-lint"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@ls-lint/ls-lint": "^1.9.2",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@storybook/addon-actions": "^6.5.0-alpha.22",
+    "@storybook/addon-essentials": "^6.5.0-alpha.22",
+    "@storybook/addon-links": "^6.5.0-alpha.22",
+    "@storybook/vue3": "^6.5.0-alpha.22",
+    "@testing-library/jest-dom": "^5.15.1",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.3",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/eslint-config-standard": "^6.1.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vuedx/typescript-plugin-vue": "^0.6.3",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "command-line-args": "^5.2.0",
+    "command-line-usage": "^6.1.1",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.7.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "gh-pages": "^3.1.0",
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1",
+    "pug": "^3.0.2",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^2.1.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0-beta.11",
+    "sass": "^1.49.0",
+    "storybook-builder-vite": "^0.1.13",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.13",
+    "vue": "^3.2.26",
+    "vue-jest": "^5.0.0-alpha.10",
+    "vue-loader": "^16.8.3"
+  },
+  "dependencies": {
+    "core-js": "^3.20.3"
+  },
+  "peerDependencies": {
+    "vite": "latest",
+    "vue": "^3.2.26"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bin": {
+    "create-component": "./bin/index.js"
+  }
+}

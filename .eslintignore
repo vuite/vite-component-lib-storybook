@@ -1,0 +1,5 @@
+node_modules
+test/unit/coverage
+src/_deprecated/icons
+dist
+es
